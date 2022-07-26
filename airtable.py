@@ -63,7 +63,7 @@ def check_losses (date):
                 elected_office_record = elected_office_table.all(formula=elected_office_search_formula)
                 elected_office_id = elected_office_record[0].get('id')
             except:
-                print(candidate[0], 'this candidate needs a manual check')
+                print(candidate[0], 'needs a manual check')
 
             if 'Lost' in candidate:
                 print(candidate[0], ' lost election')
@@ -83,8 +83,8 @@ def check_losses (date):
                 except:
                     print('Error when updating ', candidate[0], 'that candidate withdrew.')
             
-            if 'Advanced' in candidate:
-                print(candidate[0], 'Advanced')
+            else:
+                print(candidate[0], candidate[3])
 
         if date == '2022-11-08':
             print('election day')
